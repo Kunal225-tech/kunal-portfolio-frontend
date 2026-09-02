@@ -42,7 +42,7 @@ function App() {
     setIsStreaming(true)
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || ''
+      const apiUrl = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '')
       const res = await fetch(`${apiUrl}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
