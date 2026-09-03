@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Sidebar from './components/Sidebar'
 import MobileHeader from './components/MobileHeader'
 import Welcome from './components/Welcome'
@@ -107,6 +108,7 @@ function App() {
         <ChatArea ref={chatRef} messages={messages} hasMessages={hasMessages} />
         <InputBar onSend={sendMessage} disabled={isStreaming} />
       </div>
+      <Analytics />
     </div>
   )
 }
